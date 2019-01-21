@@ -1,0 +1,129 @@
+
+<head>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
+  integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<div class="row justify-content-center" >
+<div class="main-content">
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="title">Welcome : {{user.userFirstName|uppercase}}</h4>
+        <!-- <div class="image">
+            <img class="avatar border-gray" src="../assets/rajesh.jpg" alt="..." height="5%" width="5%">
+        </div> -->
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-md-5 pr-1">
+              <div class="form-group">
+                <label>Company (disabled)</label>
+                <input type="text" class="form-control" disabled="" placeholder="Company Name" value="AlightHub Payroll Inc.">
+              </div>
+            </div>
+            <div class="col-md-4 px-1">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" disabled="" placeholder="Email" value="{{user.userEmail}}">
+                  </div>
+              </div>
+            <!-- <div class="col-md-3 px-1">
+              <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" placeholder="Username" value="{{newAdmin.adminFirstName|uppercase}}">
+              </div>
+            </div> -->
+            <div class="col-md-3 pl-1">
+                <div class="form-group">
+                    <label>Mobile</label>
+                    <input type="text" class="form-control" disabled="" placeholder="Mobile" value="{{user.userMobile}}">
+                  </div>
+            </div>
+            
+          </div>
+          <div class="row">
+            <div class="col-md-6 pr-1">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" disabled="" placeholder="First Name" value="{{user.userFirstName|uppercase}}">
+              </div>
+            </div>
+            <div class="col-md-6 pl-1">
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" disabled="" placeholder="Last Name" value="{{user.userLastName|uppercase}}">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>Address</label>
+                <input type="text" class="form-control" disabled="" placeholder="Address" value="">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            
+            <div class="col-md-4 pr-1">
+              <div class="form-group">
+                <label>Gender</label>
+                <input type="text" class="form-control" disabled="" placeholder="Gender" value="{{user.gender}}">
+              </div>
+            </div>
+
+            <div class="col-md-4 px-1">
+              <div class="form-group">
+                <label>Basic-Salary</label>
+                <input type="text" class="form-control" disabled="" placeholder="Basic-Salary" value="{{user.basicSalary}}">
+              </div>
+            </div>
+
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label>Date-Of-Birth</label>
+                <input type="date" class="form-control" disabled="" placeholder="Date-Of-Birth" value="{{user.dateOfBirth}}">
+              </div>
+            </div>
+
+            </div>
+            <div class="row">
+            <div class="col-md-4 pr-1">
+              <div class="form-group">
+                <label>Department</label>
+                <input type="text" class="form-control" disabled="" placeholder="Department" value="{{user.department}}">
+              </div>
+            </div>
+
+            <div class="col-md-4 px-1">
+              <div class="form-group">
+                <label>Designation</label>
+                <input type="text" class="form-control" disabled="" placeholder="Designation" value="{{user.designation}}">
+              </div>
+            </div>
+
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label>JobTitle</label>
+                <input type="text" class="form-control" disabled="" placeholder="JobTitle" value="{{user.jobTitle}}">
+              </div>
+            </div>
+
+          </div>
+         
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div> 
+</div>
+

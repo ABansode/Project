@@ -1,0 +1,160 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+
+
+
+    <div *ngIf="showEmployee" class="example-container mat-elevation-z8 "  #TABLE>
+        <table mat-table #table [dataSource]="dataSource" matSort>
+      
+
+<!-- public displayedColumns=['EmployeeId','First Name','Last Name','Address','Mobile No','Department','Designation','Join Date'] -->
+<ng-container matColumnDef="EmployeeId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.employeeId}} </td>
+    </ng-container>
+   
+    <ng-container matColumnDef="FirstName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>FirstName</th>
+      <td mat-cell *matCellDef="let element"> {{element.employeeFirstName}} </td>
+    </ng-container>
+   
+    <ng-container matColumnDef="LastName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>LastName</th>
+      <td mat-cell *matCellDef="let element"> {{element.employeeLastName}} </td>
+    </ng-container>
+   
+    <ng-container matColumnDef="Address">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+      <td mat-cell *matCellDef="let element"> {{element.employeeAddress}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Mobile No">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Mobile No </th>
+      <td mat-cell *matCellDef="let element"> {{element.employeeMobile}} </td>
+    </ng-container>
+   
+    <ng-container matColumnDef="Department">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Department</th>
+      <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+    </ng-container>
+   
+    <ng-container matColumnDef="Designation">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Designation</th>
+      <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+    </ng-container>
+   
+    <ng-container matColumnDef="Join Date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Join Date</th>
+      <td mat-cell *matCellDef="let element"> {{element.dateOfJoining}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Action1">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let element">
+          <i (click)="editemployee(element.employeeId)" class="glyphicon glyphicon-pencil"></i>
+    </ng-container>
+     <ng-container matColumnDef="Action2">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let element">
+
+       <i (click)="deleteemployee(element.employeeId)" class="glyphicon glyphicon-trash"></i>
+       
+    </td> 
+      
+    </ng-container>
+     <ng-container matColumnDef="Action3">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let element">
+       <i (click)="ganretMonthlySalary(element.employeeId)" style="font-size:24px"  class="fa fa-rupee"></i>
+    </td> 
+    </ng-container> 
+
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+   </table>
+   <mat-paginator [pageSize]="2" [pageSizeOptions]="[2,4,6,10,20]">
+    </mat-paginator>
+    <button  (click)="ExportTOExcel()" class="btn btn-info">Downlod-Excel-File</button>
+    <button  (click)="captureScreen()"class="btn btn-info">Downlod-PDF-File</button>
+  </div>
+  
+
+
+<div *ngIf= "monthlysalarydetails">
+ <table class="table table-hover"><thead>
+   <h2>Genrate Employee  Monthlly Salary</h2>
+</thead>
+    <tbody><tr><td>  
+      <label>Employee Id</label>
+      <input type="number" [(ngModel)]="monthlySalary.monthelySalaryId">
+      </td></tr><tr><td>
+      <label>Number Of Present Days</label> 
+      <input type="text"  [(ngModel)]="monthlySalary.numberOfPresentDays" placeholder="Number Of Days">
+      </td></tr><tr><td>
+         <label>Number Of Wroking Days</label> 
+         <input type="text"  [(ngModel)]="monthlySalary.numberOfWorkingDays" placeholder="Number Of Days">
+         </td></tr><tr><td>
+      <label>  Month</label>
+       <select  [(ngModel)]="monthlySalary.month" placeholder="Month">
+        <option *ngFor="let month of months" >{{month}}</option>
+      </select>
+      </td></tr><tr><td>
+    
+      <label> Year</label>
+      <select  [(ngModel)]="monthlySalary.year">
+        <option *ngFor="let year of years" >{{year}}</option>
+      </select>
+      </td></tr><tr><td>
+      <button (click)="employeeGenrateMontlySalary()" class="btn btn-success">GenrateSalary</button>
+         <!-- <button (click)=" back()" class="btn btn-info">Back</button> -->
+      </td> 
+   </tr>
+      </tbody>
+      </table>
+    
+       
+</div>
+
+
+<div *ngIf="editEmployeeForm">
+  <div >
+      <h1>Employee Details</h1>
+             
+      <!-- <div class="col-lg-6"> -->
+<table class="table table-bordered">
+
+     <tr><th><label>First Name</label></th> 
+
+     <th><input type="text"  [(ngModel)]="editnewemployee.employeeFirstName"></th> <br></tr>
+    <tr> <th> <label>Last Name</label></th>
+    <th> <input type="text"[(ngModel)]="editnewemployee.employeeLastName"></th><br> </tr>
+    
+<tr><th><label>Date-Of-Birth</label></th>
+
+<th><input type="date" [(ngModel)]="editnewemployee.dateOfBirth"></th><br></tr>
+<tr><th><label>Date-Of-Joining</label></th>
+
+<th><input type="date" [(ngModel)]="editnewemployee.dateOfJoining"></th><br></tr>
+<tr>
+<th><label>Department</label></th>
+<th><input type="text"  [(ngModel)]="editnewemployee.department"></th><br> </tr>
+<tr><th><label>Designation</label></th>
+<th><input type="text"  [(ngModel)]="editnewemployee.designation"></th><br></tr>
+<tr><th><label>MobileNo</label></th>
+<th><input type="text"  [(ngModel)]="editnewemployee.employeeMobile"></th><br></tr>
+<tr><th><label>Email_ID</label></th>
+<th><input type="text"  [(ngModel)]="editnewemployee.employeeEmail"></th><br></tr>
+<tr><th><label>Basic Salary</label></th>
+<th><input type="text"  [(ngModel)]="editnewemployee.basicSalary"></th><br></tr>
+
+</table>
+<div style="text-align:center">
+<button (click)="updateEmployee(editnewemployee)" class="btn btn-success">Update Employee</button>         
+
+
+<!-- <button (click)="pdfCreate()" class="btn btn-success">Pdf</button> -->
+</div>
+</div>
+
+
+

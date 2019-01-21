@@ -1,0 +1,25 @@
+<h2>Genrate User Monthlly Salary</h2>
+
+<form [formGroup]="registrationForm">
+
+<label>Enter User Id</label>
+<input type="text" formControlName="monthelySalaryId" [(ngModel)]="monthlySalary.monthelySalaryId">
+<br>
+<label>Number Of Days</label>
+<input type="text" formControlName="numberOfDays" [(ngModel)]="monthlySalary.numberOfDays" placeholder="Number Of Days">
+<br>
+<label>Month</label>
+<select formControlName="month" [(ngModel)]="monthlySalary.month" placeholder="Month">
+  <option *ngFor="let month of months" >{{month}}</option>
+</select>
+<br>
+
+<label>Year</label>
+<select formControlName="year" [(ngModel)]="monthlySalary.year">
+  <option *ngFor="let year of years" >{{year}}</option>
+</select>
+<br>
+<button (click)="sendDataforGenrateMontlySalary()">Display</button>
+
+
+</form>

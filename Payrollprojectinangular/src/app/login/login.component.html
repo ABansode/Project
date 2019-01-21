@@ -1,0 +1,84 @@
+<!-- <div class="login-page">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img src="assets/FinalLogo.png" width="150px" class="user-avatar" />
+            <h1>SB Admin BS4 Angular5</h1>
+            <form role="form">
+                <div class="form-content">
+                    <div class="form-group">
+                    
+                        <input placeholder="User-Id" type="text"  [(ngModel)]="login.uname" class="form-control input-underline input-lg" name="uname">
+                    </div>
+                    <div class="form-group">
+                        <input placeholder="Password" type="password"  [(ngModel)]="login.pass" class="form-control input-underline input-lg" name="pass">                    </div>
+                </div>
+                <a class="btn rounded-btn"  (click)="onLoggedin()"> Log in </a>
+                &nbsp;
+                <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+<head>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
+        integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+</head>
+
+<div class="app flex-row align-items-center ng-scope">
+        <div class="container">
+        <div class="row justify-content-md-center">
+        <div class="col-md-4">
+        <div class="card-group">
+        <div class="card p-8">
+        <div class="card-body">
+        <h1>Login</h1>
+        <p class="text-muted">Sign In to your account</p>
+
+        <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
+        </div>
+        <input type="text" class="form-control" placeholder="Company-Code">
+        </div>
+
+        <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-user"></i></span>
+        </div>
+        <input type="text" class="form-control" placeholder="login_id" [(ngModel)]="login.login_id">
+        </div>
+
+        <div class="input-group mb-4">
+        <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+        </div>
+        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="login.login_pass">
+        </div>
+
+        <div class="row">
+        <div class="col-6">
+        <button type="button" class="btn btn-primary px-4" (click)="onLoggedin()">Login</button>
+        </div>
+        <div class="col-6 text-right">
+        <button type="button" class="btn btn-link px-0">Forgot password?</button>
+        </div>
+        </div>
+
+        </div>
+        </div>
+        <!-- <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+        <div class="card-body text-center">
+        <div>
+        <h2>Sign up</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <button type="button" class="btn btn-primary active mt-3">Register Now!</button>
+        </div>
+        </div>
+        </div> -->
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>

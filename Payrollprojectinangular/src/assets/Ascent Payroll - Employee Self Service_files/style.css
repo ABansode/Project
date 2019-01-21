@@ -1,0 +1,119 @@
+/* Authored by Tim Rauter October 2005 */
+body {
+margin: 30px auto;
+background-color: #646464;
+}
+
+td {
+font-family: Arial;
+font-size: 10px;
+color: #555555;
+text-align: left;
+}
+
+a {
+color: #304E78;
+font-weight: bold;
+text-decoration: none;
+}
+
+a:hover {
+color: #304E78;
+font-weight: bold;
+text-decoration: underline;
+}
+
+.title 
+{
+font-family:Arial; 
+font-size: 12px;
+font-weight: bold;
+color: #304F78;
+}
+
+.titleCompany 
+{
+font-family:Arial Narrow; 
+font-size: 32px;
+color: #F8FFFF;
+}
+
+.titleSmall 
+{
+font-family:Arial; 
+font-size: 8pt;
+font-weight: bold;
+color: #304F78;
+}
+.titleBig 
+{
+font-family:Arial; 
+font-size: 17px;
+font-weight: bold;
+color: #304F78;
+}
+
+.header {
+height: 110px;
+background-image: url(../images/Login/headerbg.gif);
+background-repeat: no-repeat;
+background-color: #646464;
+}
+
+.headerleft {
+padding: 15px 0 0 15px;
+}
+
+.headerright {
+padding: 15px 15px 0 0;
+}
+
+.mainbody {
+background-image: url(../images/Login/mainbodybg.gif);
+background-repeat: repeat-y;
+background-color: #646464;
+}
+
+.mainleft {
+padding: 0 0 0 20px;
+}
+
+.dividervert {
+background-image: url(../images/Login/divider_vert.gif);
+background-repeat: repeat-y;
+}
+
+.mainright {
+padding: 10px 15px 0 5px;
+}
+
+.footer {
+height: 43px;
+margin: 0;
+background-image: url(../images/Login/footerbg.gif);
+background-repeat: no-repeat;
+background-color: #646464;
+}
+
+.footerleft {
+padding: 8px 0 0 35px;
+font size: 9px;
+}
+
+.footerright {
+text-align: right;
+padding: 8px 35px 0 0;
+font size: 9px;
+}
+
+.poweredBy {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 10px;
+color: #555555;
+}
+.header1 {
+    height: 110px;
+    background-image: url(../images/Login/Integreon_Headerbg2.GIF);
+    background-repeat: no-repeat;
+    background-color: #646464;
+}

@@ -1,0 +1,42 @@
+
+<div   style="background-image: url('assets/bbb.jpg')" *ngIf="div1">
+
+ 
+<div class="col-lg-6">
+    <h2>Earnings</h2>
+    <br> 
+    
+    <br>
+    <ul *ngFor="let Earning of Earnings">
+  <label style="color: darkred" ><input type="checkbox" (click)="collect(Earning)">  {{Earning}} </label>
+    <br> 
+    
+    <br> 
+    </ul> 
+</div>
+<div class="row containet">
+
+<div class="col-lg-6" class="sidenave">
+    <h2>Deductions</h2>
+    <br> 
+    
+    <br>
+<ul *ngFor="let Deduction of Deductions">
+<label style="color: darkred"><input type="checkbox" (click)="collect(Deduction)" > {{Deduction}} </label>
+<br> 
+    <br> 
+    
+</ul> 
+</div>
+</div>
+<div style="text-align: center">
+<button style="background-color: brown;"class="btn btn-success"  (click)="submit()"  >Submit</button>
+</div>
+
+
+</div>
+
+<div *ngIf="div2">
+<h1>Sucessfully Data Store To Database</h1>
+
+</div>

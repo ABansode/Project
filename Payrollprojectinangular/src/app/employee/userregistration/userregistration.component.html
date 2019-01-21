@@ -1,0 +1,182 @@
+
+
+<div *ngIf="div1"  style="background-image: url('assets/bbb.jpg')">
+                <h1 style="color: red ;text-align:center;font: bold;text-size-adjust:initial">New User Registration</h1>
+                <h3>{{message}}</h3>
+        <div class="col-lg-6">
+              
+<form class="form-horizontal" [formGroup]="registrationForm">
+
+<label>First Name<label style="color:red">*</label></label>
+<div class="col-sm-12 form-inline">
+<input type="text" formControlName="firstname" [(ngModel)]="userRegistration.userFirstName" class="form-control" placeholder="First-Name">
+</div>
+<span style="color:red" *ngIf="registrationForm.controls.firstname.invalid && registrationForm.controls.firstname.dirty">
+       
+    <p *ngIf="registrationForm.controls.firstname.errors.required">First-Name is required</p>
+     <p *ngIf="registrationForm.controls.firstname.errors.pattern">Digit Not Allow</p>
+ 
+    </span>
+<br><span *ngIf="registrationForm.controls.firstname.valid">
+<label>Last Name<label style="color:red">*</label></label>
+<div class="col-sm-12 form-inline">
+    <input type="text"  formControlName="lastname" [(ngModel)]="userRegistration.userLastName" class="form-control" placeholder="Last-Name"  >
+    </div>
+
+<br>
+
+        <span style="color:red" *ngIf="registrationForm.controls.lastname.invalid && registrationForm.controls.lastname.dirty">
+       
+                        <p *ngIf="registrationForm.controls.lastname.errors.required">Last-Name is required</p>
+                         <p *ngIf="registrationForm.controls.lastname.errors.pattern">Digit Not Allow</p>
+                     
+                        </span> 
+                        <br>
+                        <label>Gender</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" formControlName="userGender" [(ngModel)]="userRegistration.gender" checked="" value="male">Male 
+                            </label>
+                        
+                            <label>
+                                <input type="radio" formControlName="userGender" [(ngModel)]="userRegistration.gender" value="female">Female 
+                            </label>
+                       
+                            <label>
+                                <input type="radio" formControlName="userGender" [(ngModel)]="userRegistration.gender" value="other">Other 
+                            </label>
+                        </div>     
+                    </span>
+<br>
+<label>Date-Of-Birth<label style="color:red">*</label></label>
+<div class="col-sm-12 form-inline"  >
+<input type="date" style="white-space: pre-wrap" formControlName="dateOfBirth" [(ngModel)]="userRegistration.dateOfBirth"  class="form-control" placeholder="Date-Of-Birth" >
+</div>
+<span style="color:red" *ngIf="registrationForm.controls.dateOfBirth.invalid && registrationForm.controls.dateOfBirth.dirty">
+<p *ngIf="registrationForm.controls.dateOfBirth.errors.required">Date Of Birth Requred</p>
+
+</span>
+<br>
+<label>Mobile<label style="color:red">*</label></label>
+<div class="col-sm-12 form-inline">
+        <div class="input-group">
+<input type="text" value="+91" disabled="disabled" class="form-control" size="1">
+</div>
+
+<input type="text" size="11"   formControlName="mobile" [(ngModel)]="userRegistration.userMobile" class="form-control" placeholder="Mobile">
+</div>
+<span style="color:red" *ngIf="registrationForm.controls.mobile.invalid && registrationForm.controls.mobile.dirty">
+
+        <p *ngIf="registrationForm.controls.mobile.errors.min">Must be 10 digit</p>
+        <p *ngIf="registrationForm.controls.mobile.errors.max">Must be 10 digit</p>
+        <p *ngIf="registrationForm.controls.mobile.errors.pattern">Must be digit</p>
+
+</span>
+<br>
+<label>Address <label style="color:red">*</label></label>
+<div class="col-sm-12 form-inline">
+<input type="text" formControlName="address" [(ngModel)]="userRegistration.userAddress" class="form-control" placeholder="Address">
+</div>
+<br>
+<span style="color:red" *ngIf="registrationForm.controls.address.invalid && registrationForm.controls.address.dirty">
+<p *ngIf="registrationForm.controls.address.errors.required">Address is required</p>
+</span>
+<br>
+
+               
+</form>
+</div>
+<div class="row containet">
+
+<div class="col-lg-6" class="sidenave">
+       
+<form class="form-horizontal" [formGroup]="registrationForm">
+
+    <label>Department<label style="color:red">*</label></label>
+            <div class="col-sm-12 form-inline">
+                <input type="text" formControlName="department" [(ngModel)]="userRegistration.department" class="form-control" placeholder="Department">
+                     
+            </div>
+            <span style="color:red" *ngIf="registrationForm.controls.department.invalid && registrationForm.controls.department.dirty">
+                <p *ngIf="registrationForm.controls.department.errors.required">Department is Required</p>
+
+            </span>
+<br>
+    <label>Designation<label style="color:red">*</label></label>
+        <div class="col-sm-12 form-inline">
+            <input type="text"  formControlName="designation" [(ngModel)]="userRegistration.designation" class="form-control" placeholder="Designation" >
+    
+        </div>
+        <span style="color:red" *ngIf="registrationForm.controls.designation.invalid && registrationForm.controls.designation.dirty">
+            <p *ngIf="registrationForm.controls.designation.errors.required">Designation is Required</p>
+
+        </span> 
+<br>
+    <label>Date-Of-Joining<label style="color:red">*</label></label>
+        <div class="col-sm-12 form-inline" >
+            <input type="date" formControlName="dateOfJoining" [(ngModel)]="userRegistration.dateOfJoining" class="form-control" placeholder="Date-Of-Joining" >
+        </div>
+        <span style="color:red" *ngIf="registrationForm.controls.dateOfJoining.invalid && registrationForm.controls.dateOfJoining.dirty">
+            <p *ngIf="registrationForm.controls.dateOfJoining.errors.required">Date Of Joining</p>
+            
+            </span>
+<br>
+<label>Basic Salary<label style="color:red">*</label></label>
+
+    <div class="col-sm-12 form-inline">
+            <input type="text" formControlName="basicSalary" [(ngModel)]="userRegistration.basicSalary" class="form-control" placeholder="Basic Salary">
+    </div>
+    <span style="color:red" *ngIf="registrationForm.controls.basicSalary.invalid && registrationForm.controls.basicSalary.dirty">
+        <p *ngIf="registrationForm.controls.basicSalary.errors.required">>Basic Salary</p>
+        
+        </span>
+<br>
+<label>Job Title<label style="color:red">*</label></label>
+        <div class="col-sm-12 form-inline">
+            <input type="text"  formControlName="jobTitle" [(ngModel)]="userRegistration.jobTitle" class="form-control" placeholder="Job Title" >
+    
+        </div>
+        <span style="color:red" *ngIf="registrationForm.controls.jobTitle.invalid && registrationForm.controls.jobTitle.dirty">
+            <p *ngIf="registrationForm.controls.jobTitle.errors.required">Job Title</p>
+            
+            </span>  
+<br>
+
+    <label>E-mail<label style="color:red">*</label></label>
+        <div class="col-sm-12 form-inline" >
+            <input type="text" formControlName="email" [(ngModel)]="userRegistration.userEmail" class="form-control" placeholder="E-mail">
+        </div>
+<br>
+    <span style="color:red" *ngIf="registrationForm.controls.email.invalid && registrationForm.controls.email.dirty">
+        <p *ngIf="registrationForm.controls.email.errors.required">Invalid Email</p>
+    </span>
+
+<br>
+
+<label>Company Name<label style="color:red">*</label></label>
+<div class="col-sm-12 form-inline" >
+    <select formControlName="companyName" [(ngModel)]="userRegistration.companyName" placeholder="companyName">
+        <option *ngFor="let companyName of companyNames" >{{companyName}}</option>
+      </select>
+</div>
+<br>
+<span style="color:red" *ngIf="registrationForm.controls.companyName.invalid && registrationForm.controls.companyName.dirty">
+<p *ngIf="registrationForm.controls.companyName.errors.required">Select Company Name</p>
+</span>
+
+<br>
+
+</form>
+</div>
+</div>
+<div style="text-align: center">
+        <button style="background-color: brown;"class="btn btn-success" size="6"  (click)="register()"  [disabled]="registrationForm.invalid">   Next   </button>
+</div>
+
+
+</div>
+<div *ngIf="div2">
+
+    <app-payrollprocessing ></app-payrollprocessing>
+     
+</div>

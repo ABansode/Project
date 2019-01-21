@@ -1,0 +1,220 @@
+<head>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
+        integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+
+
+
+<div class="app flex-row align-items-center ng-scope"  *ngIf="div1" >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card mx-6">
+                    <div class="card-body p-4">
+                        <div class="card p-4">
+                            <div class="card-body">
+                                <div>
+                                    <h1 align="center">New Admin Registration</h1>
+                                    <div class="col-lg-6">
+                                        <form class="form-horizontal" [formGroup]="registrationForm">
+                                            <label>First Name<label style="color:red">*</label></label>
+                                                <div class="col-sm-12 form-inline">
+                                                    <input type="text" formControlName="firstname" [(ngModel)]="newAdmin.adminFirstName" class="form-control" placeholder="First-Name">
+                                                </div>
+                                            <span style="color:red" *ngIf="registrationForm.controls.firstname.invalid && registrationForm.controls.firstname.dirty">
+                                            <p *ngIf="registrationForm.controls.firstname.errors.required">First-Name is required</p>
+                                            <p *ngIf="registrationForm.controls.firstname.errors.pattern">Digit Not Allow</p>
+                                            </span>
+                                                <br>
+                                            <label>Last Name<label style="color:red">*</label></label>
+                                                <div class="col-sm-12 form-inline">
+                                                    <input type="text"  formControlName="lastname" [(ngModel)]="newAdmin.adminLastName" class="form-control" placeholder="Last-Name" >
+                                                </div>
+                                                <br>
+                                            <span style="color:red" *ngIf="registrationForm.controls.lastname.invalid && registrationForm.controls.lastname.dirty">
+                                            <p *ngIf="registrationForm.controls.lastname.errors.required">Last-Name is required</p>
+                                            <p *ngIf="registrationForm.controls.lastname.errors.pattern">Digit Not Allow</p>
+                                            </span> 
+                                                <br>
+                                            <label>Gender</label>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" formControlName="adminGender" [(ngModel)]="newAdmin.admingender" checked="" value="male">Male </label>
+                                                    <label>
+                                                        <input type="radio" formControlName="adminGender" [(ngModel)]="newAdmin.admingender" value="female">Female </label>
+                                                    <label>
+                                                        <input type="radio" formControlName="adminGender" [(ngModel)]="newAdmin.admingender" value="other">Other </label>
+                                                </div>
+                                                <br>
+                                                    <label>Date-Of-Birth<label style="color:red">*</label></label>
+                                                        <div class="col-sm-12 form-inline">
+                                                            <input type="date" formControlName="dateOfBirth" [(ngModel)]="newAdmin.dateOfBirth"  class="form-control" placeholder="Date-Of-Birth" >
+                                                        </div>
+                                                            <span style="color:red" *ngIf="registrationForm.controls.dateOfBirth.invalid && registrationForm.controls.dateOfBirth.dirty">
+                                                            <p *ngIf="registrationForm.controls.dateOfBirth.errors.required">Date Of Birth Requred</p>
+                                                            </span>
+                                                <br>
+                                                    <label>Mobile<label style="color:red">*</label></label>
+                                                        <div class="col-sm-12 form-inline">
+                                                            <div class="input-group">
+                                                                <input type="text" value="+91" disabled="disabled" class="form-control" size="1">
+                                                            </div>
+                                                            <input type="text" formControlName="mobile" [(ngModel)]="newAdmin.adminMobile" class="form-control" placeholder="Mobile">
+                                                        </div>
+                                                    <span style="color:red" *ngIf="registrationForm.controls.mobile.invalid && registrationForm.controls.mobile.dirty">
+                                                    <p *ngIf="registrationForm.controls.mobile.errors.min">Must be 10 digit</p>
+                                                    <p *ngIf="registrationForm.controls.mobile.errors.max">Must be 10 digit</p>
+                                                    <p *ngIf="registrationForm.controls.mobile.errors.pattern">Must be digit</p>
+                                                    </span>
+                                                <br>
+                                                    <label>Address <label style="color:red">*</label></label>
+                                                        <div class="col-sm-12 form-inline">
+                                                            <input type="text" formControlName="address" [(ngModel)]="newAdmin.adminAddress" class="form-control" placeholder="Address">
+                                                        </div>
+                                                <br>
+                                                    <span style="color:red" *ngIf="registrationForm.controls.address.invalid && registrationForm.controls.address.dirty">
+                                                    <p *ngIf="registrationForm.controls.address.errors.required">Address is required</p>
+                                                    </span>
+                                                <br>
+                                        </form>
+</div>
+    <div class="row containet">
+        <div class="col-lg-6" class="sidenave">
+            <form class="form-horizontal" [formGroup]="registrationForm">
+                <label>Department<label style="color:red">*</label></label>
+                    <div class="col-sm-12 form-inline">
+                        <input type="text" formControlName="department" [(ngModel)]="newAdmin.department" class="form-control" placeholder="Department">
+                    </div>
+                <span style="color:red" *ngIf="registrationForm.controls.department.invalid && registrationForm.controls.department.dirty">
+                <p *ngIf="registrationForm.controls.department.errors.required">Department is Required</p>
+                </span>
+                        <br>
+                <label>Designation<label style="color:red">*</label></label>
+                    <div class="col-sm-12 form-inline">
+                        <input type="text"  formControlName="designation" [(ngModel)]="newAdmin.designation" class="form-control" placeholder="Designation" >
+                    </div>
+                <span style="color:red" *ngIf="registrationForm.controls.designation.invalid && registrationForm.controls.designation.dirty">
+                <p *ngIf="registrationForm.controls.designation.errors.required">Designation is Required</p>
+                </span> 
+                        <br>
+                <label>Date-Of-Joining<label style="color:red">*</label></label>
+                    <div class="col-sm-12 form-inline" >
+                        <input type="date" formControlName="dateOfJoining" [(ngModel)]="newAdmin.dateOfJoining" class="form-control" placeholder="Date-Of-Joining" >
+                    </div>
+                <span style="color:red" *ngIf="registrationForm.controls.dateOfJoining.invalid && registrationForm.controls.dateOfJoining.dirty">
+                <p *ngIf="registrationForm.controls.dateOfJoining.errors.required">Date Of Joining</p>
+                </span>
+                        <br>
+                <label>Basic Salary<label style="color:red">*</label></label>
+                    <div class="col-sm-12 form-inline">
+                        <input type="text" formControlName="basicSalary" [(ngModel)]="newAdmin.basicSalary" class="form-control" placeholder="Basic Salary">
+                    </div>
+                <span style="color:red" *ngIf="registrationForm.controls.basicSalary.invalid && registrationForm.controls.basicSalary.dirty">
+                <p *ngIf="registrationForm.controls.basicSalary.errors.required">>Basic Salary</p>
+                </span>
+                        <br>
+                <label>Job Title<label style="color:red">*</label></label>
+                    <div class="col-sm-12 form-inline">
+                        <input type="text"  formControlName="jobTitle" [(ngModel)]="newAdmin.jobTitle" class="form-control" placeholder="Job Title" >
+                    </div>
+                <span style="color:red" *ngIf="registrationForm.controls.jobTitle.invalid && registrationForm.controls.jobTitle.dirty">
+                <p *ngIf="registrationForm.controls.jobTitle.errors.required">Job Title</p>
+                </span>  
+                        <br>
+                <label>E-mail<label style="color:red">*</label></label>
+                    <div class="col-sm-12 form-inline" >
+                        <input type="text" formControlName="email" [(ngModel)]="newAdmin.adminEmail" class="form-control" placeholder="E-mail">
+                    </div>
+                        <br>
+                <span style="color:red" *ngIf="registrationForm.controls.email.invalid && registrationForm.controls.email.dirty">
+                <p *ngIf="registrationForm.controls.email.errors.email">Invalid Email</p>
+                </span>
+                        <br>
+            </form>
+        </div>
+    </div>
+<div style="text-align: center">
+    <button type="button" class="btn btn-success" (click)="adminRegister()">Create New Admin</button>
+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="div2">
+  <app-success></app-success> 
+  <h1>hiiiii</h1>    
+</div>
+
+
+ <!-- <div class="card-footer p-4">
+        <div class="row">
+            <div class="col-6">
+                <button class="btn btn-block btn-facebook" type="button">
+                <span>facebook</span>
+                </button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-block btn-twitter" type="button">
+                <span>twitter</span>
+                </button>
+            </div>
+        </div>
+    </div> -->
+
+
+
+<!-- 
+    <h1>Register</h1>
+                              <p class="text-muted">Create your account</p>
+                                <div class="input-group mb-4">
+                                    <form [formGroup]=registrationForm style="text-align:center">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="material-icons">people</i></span>
+                                      <input type="text" class="form-control" placeholder="FirstName" formControlName="firstname" [(ngModel)]="newAdmin.firstname">
+                                      <span style="color:red" *ngIf="registrationForm.controls.firstname.invalid && registrationForm.controls.firstname.dirty">
+                                        <p *ngIf="registrationForm.controls.firstname.errors.required">*Username is required</p>
+                                        <p *ngIf="registrationForm.controls.firstname.errors.pattern">*Username must contain 7 alphabets</p>
+                                      </span>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="material-icons">people</i></span>
+                                      <input type="text" class="form-control" placeholder="LastName" [(ngModel)]="newAdmin.lastname">
+                                   </div> 
+                                </div>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="material-icons">email</i></span>
+                                      <input type="email" class="form-control" placeholder="Email" [(ngModel)]="newAdmin.email">
+                                    </div>
+                                </div>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="material-icons">phone_android</i></span>
+                                      <input type="text" class="form-control" placeholder="Mobile" [(ngModel)]="newAdmin.mobile">
+                                    </div>
+                                </div>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="material-icons">date_range</i></span>
+                                      <input type="date" class="form-control" [(ngModel)]="newAdmin.date_of_birth">
+                                    </div>
+                                </div>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="material-icons">date_range</i></span>
+                                      <input type="date" class="form-control" [(ngModel)]="newAdmin.date_of_joining">
+                                    </div>
+                                </div>
+                                    </form>
+                                        <button type="button" class="btn btn-block btn-success" (click)="adminRegister()">Create New Admin</button> -->

@@ -1,0 +1,58 @@
+<p>
+  leave-managment works!
+</p>
+<div *ngFor="let user of User">
+  {{user.userrid}}  
+</div>
+<div>
+   
+    <table class="table table-hover">
+        <thead>
+            <th>
+                UserId
+            </th>
+            <th>
+             UserFirstName
+            </th>
+            <th>
+                userLastName
+            </th>
+            <th>
+                userMobile
+            </th>
+            <th>
+               userEmail
+            </th>
+            <th>
+              gender
+            </th>
+            <th>
+              designation
+            </th>
+            <th>
+             department
+            </th>
+            <th>
+                basicSalary
+            </th>
+            <th>
+               jobTitle
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of User">
+                <td> {{user.userrid}}</td>
+                <td> {{user.userFirstName}}</td>
+                <td> {{user.userLastName}}</td>
+                <td> {{user.userMobile}}</td>
+                <td> {{user.userEmail}}</td>
+                <td> {{user.gender}}</td>
+                <td> {{user.designation}}</td>
+                <td> {{user.department}}</td>
+                <td> {{user.basicSalary}}</td>
+                <td> {{user.jobTitle}}</td>
+                <td><input type="radio" name="a" (click)="changePages()"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

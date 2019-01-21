@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+    
+
+<div class="container-fluid">
+  <div class="row content"> 
+      
+    
+    <div class="col-sm-12" style="background-color: rgba(10, 66, 109, 0.562)" >
+        <ul class="nav navbar-nav navbar-left" >
+            <li style="color: #fff">  
+             <h4><label>Welcome To  {{user.userFirstName|uppercase}} {{user.userLastName|uppercase}}</label></h4>
+            </li>
+          </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+          <li >  
+            <a href="#" style="color: #fff"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+          </li>
+        </ul>
+      </div>
+        
+    <div class="col-sm-3 sidenav"  >
+      
+          <p><label (click)="oncheck(1)">Investment Declaration</label></p>
+          <p><label (click)="oncheck(2)">Personal Details</label></p>
+          <p><label (click)="oncheck(3)">View Payslip</label></p>
+          <p><label (click)="oncheck(4)">View Income-Tax Report</label></p>
+          <p><label (click)="oncheck(5)">View Form Sixteen</label></p>
+          <p><label (click)="oncheck(6)">Notification</label></p>
+          <p><label (click)="oncheck(7)">Change Password</label></p>
+          <p><label (click)="oncheck(8)">Feedback</label></p>
+    </div>
+
+     <div class="col-sm-9" >
+       <div *ngIf="InvestmentDeclaration"><app-investment-declaration></app-investment-declaration></div>
+      <div *ngIf="PersonalDetails"><app-personal-details></app-personal-details></div>
+      <div *ngIf="ViewPayslip"><app-view-payslip></app-view-payslip></div>
+      <div *ngIf="ViewIncomeTaxReport"><app-view-income-tax-report></app-view-income-tax-report></div>
+      <div *ngIf="ViewFormSystem"><app-view-form-system></app-view-form-system></div>
+      <div *ngIf="Notification"><app-notification></app-notification></div>
+      <div *ngIf="ChangePassword"><app-change-password></app-change-password></div>
+      <div *ngIf="Feedback"><app-feedback></app-feedback></div>
+
+    </div> 
+  </div>
+</div>
+
+
+</body>
+</html>
+

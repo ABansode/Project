@@ -1,0 +1,18 @@
+table{
+    align-content: space-between;
+      
+    font-style: italic;
+    
+
+}
+th{
+    color: tomato;
+}
+  
+  label{
+      text-align:center;
+  }
+h3{
+    font-style:italic;
+    color:red;
+}

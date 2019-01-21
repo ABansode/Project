@@ -1,0 +1,48 @@
+.yogini{
+    font-size: x-large;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: navajowhite;
+    text-align: left;
+}
+.virendra{
+    font-size: 0.5cm;
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(19, 12, 2);
+}
+.sau{
+    text-align: start
+}
+
+.dropbtn {
+   
+    color: black;
+  
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+   
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #f5f8f5;}

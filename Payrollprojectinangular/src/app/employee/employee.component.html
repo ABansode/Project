@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+    
+
+<div class="container-fluid">
+  <div class="row content"> 
+      
+    
+    <div class="col-sm-12" style="background-color: rgb(14, 184, 226)">
+        <ul class="nav navbar-nav navbar-left">
+            <li>  
+              <h4>Welcome {{employee.employeeFirstName|uppercase}}</h4>
+            </li>
+          </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+          <li>  
+            <a (click)="logOut()">Logout</a>
+          </li>
+        </ul>
+      </div>
+        
+    <div class="col-sm-2 sidenav">
+      
+      <ul >
+          <li><label (click)="display(6)">Profile</label></li>
+        <li ><label (click)="display(1)">Client Onbording</label></li>
+        <li><label (click)="display(2)">Payroll Processing</label></li>
+        <li><div class="dropdown">
+          <label class="dropbtn">Client Information</label>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div></li>
+        <li><label (click)="display(4)">Client Registration</label></li>
+        <li><label (click)="display(5)">User Registration</label></li>
+        <li><label (click)="display(7)">Gentare User Salary</label></li>
+              </ul><br> 
+               
+              
+              
+    </div>
+
+    <div class="col-sm-10"  *ngIf="div1" style="background-color: rgb(227, 227, 238)">
+      <h1>Client Onbording</h1>
+      <app-clientonbording></app-clientonbording>
+     
+    </div>
+
+    <div class="col-sm-10" *ngIf="div2" style="background-color: rgb(227, 227, 238)">
+        
+        <app-payrollprocessing></app-payrollprocessing>
+      </div>
+
+      <div class="col-sm-10" *ngIf="div3" style="background-color: rgb(227, 227, 238)">
+          <h1>Company Information</h1>
+        </div>
+    
+        
+      <div class="col-sm-10" *ngIf="div4" style="background-color: rgb(227, 227, 238)">
+          <h1>New Client Registration</h1>
+          <app-clientregistration></app-clientregistration>
+        </div>
+
+        <div class="col-sm-10" *ngIf="div5" style="background-color: rgb(227, 227, 238)">
+           
+            <app-userregistration ></app-userregistration>
+            
+          </div>
+
+          <div class="col-sm-10" *ngIf="div6" style="background-color: rgb(227, 227, 238)">
+            
+              <app-employee-profile></app-employee-profile>
+            </div>
+
+            
+          <div class="col-sm-10" *ngIf="div7" style="background-color: rgb(227, 227, 238)">
+          
+            <app-genratesalary></app-genratesalary>
+          </div>
+  </div>
+</div>
+
+
+</body>
+</html>
+

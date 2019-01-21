@@ -1,0 +1,15 @@
+<form [formGroup]="registrationForm">
+<label>Company Code</label>
+<input type="text" formControlName="companyCode" [(ngModel)]="clientOnbording.companyCode"><br>
+<label>Company Url</label>
+<input type="text" formControlName="companyUrl" [(ngModel)]="clientOnbording.companyUrl"><br>
+<label>Expirey Date</label>
+<input type="date" formControlName="expireyDate" [(ngModel)]="clientOnbording.expireyDate"><br>
+
+<label>Company Address</label>
+<input type="text" formControlName="companyAddress" [(ngModel)]="clientOnbording.companyAddress"><br>
+
+<div style="text-align: center">
+  <button style="background-color: brown;"class="btn btn-success"   (click)="register()">   Submit   </button>
+</div>
+</form>

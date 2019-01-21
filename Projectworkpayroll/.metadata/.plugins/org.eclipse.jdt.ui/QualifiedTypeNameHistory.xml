@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.hibernate.Criteria"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+<fullyQualifiedTypeName name="com.alighthub.employeepayrollservice.model.MonthlySalaryGenrate"/>
+<fullyQualifiedTypeName name="com.itextpdf.text.pdf.PdfStructTreeController.returnType"/>
+<fullyQualifiedTypeName name="org.hibernate.Session"/>
+<fullyQualifiedTypeName name="org.hibernate.query.Query"/>
+<fullyQualifiedTypeName name="com.alighthub.employeepayrollservice.model.SalarySlipStructure1"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="com.itextpdf.text.log.SysoLogger"/>
+<fullyQualifiedTypeName name="com.alighthub.employeepayrollservice.common.GenrateSalarySlip"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.lang.StackTraceElement"/>
+<fullyQualifiedTypeName name="com.alighthub.employeepayrollservice.common.GenrateSalarySlipEmployee"/>
+<fullyQualifiedTypeName name="ch.qos.logback.classic.net.SyslogAppender"/>
+<fullyQualifiedTypeName name="com.alighthub.employeepayrollservice.model.MonthlySalaryGenrate1"/>
+<fullyQualifiedTypeName name="com.alighthub.employeepayrollservice.common.GenrateEmployeeReport"/>
+<fullyQualifiedTypeName name="org.hibernate.type.BlobType"/>
+<fullyQualifiedTypeName name="java.sql.Blob"/>
+<fullyQualifiedTypeName name="com.alighthub.employeepayrollservice.model.EmployeeRegistration"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
+<fullyQualifiedTypeName name="org.hibernate.Transaction"/>
+</qualifiedTypeNameHistroy>

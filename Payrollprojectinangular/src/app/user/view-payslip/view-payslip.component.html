@@ -1,0 +1,47 @@
+
+<div>
+ <div class="col-sm-5" >
+    
+   <!-- From:<input type="date"><img height="30" src="./../../../assets/ca;ender2.png" (click)=calenderOpen()><br>    
+      To:<input type="date"><img height="30" src="./../../../assets/ca;ender2.png" (click)=calenderOpen()><br>
+      -->
+    <label><h3>Payment Sleap</h3></label><br><br>  
+   <!-- <label>From</label> <br><input type="month"><br>
+     <label>To</label> <br><input type="month"><br> -->
+     <label>Select Month</label><br>
+     <!-- <select name="ctl00$ContentPlaceHolder1$DrpMonth" onchange="javascript:setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$DrpMonth\',\'\')', 0)" id="ctl00_ContentPlaceHolder1_DrpMonth" style="width:200px;">
+      <option value="October">October</option>
+      <option selected="selected" value="September">September</option>
+      <option value="August">August</option>
+  
+    </select> -->
+     <select  name="ctl00$ContentPlaceHolder1$DrpMonth" [(ngModel)]="monthlySalaryGenrate.month" style="width:200px;">
+      <option selected="selected" value="October">October</option>
+      <option value="September">September</option>
+      <option value="August">August</option>
+      <option value="july">July</option>
+      <option value="August">May</option>
+      <option value="August">April</option>
+      <option value="August">March</option>
+      <option value="August">February</option>
+      <option value="August">January</option>
+      
+  
+    </select><br>
+    <label>Select Year</label><br>
+    <select   [(ngModel)]="monthlySalaryGenrate.year" style="width:200px;">
+            <option selected="selected" value="2018">2018</option>
+  
+    </select><br><br>
+
+     <button (click)=viewPaySlip() >VIEW</button>
+ 
+     </div>
+  
+     <div class="col-sm-12">
+     <div *ngIf="viewpaySleep">
+      your pay slip is genarated
+     </div>
+     </div>
+</div>
+<h1>{{log}}</h1>

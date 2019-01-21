@@ -1,0 +1,75 @@
+<p>
+  profile works!
+</p>
+<div>
+  {{client.client_id}}
+  {{client.client_name}}
+</div>
+
+<div class="bg-img">
+  <h1>Client Profile</h1>
+  
+  <!-- <div class="col-xs-6">
+      <div clas="text-center">
+        <img src="assets/avatar_2x.png" alt="avatar">
+        <h6>upload photo</h6>
+        <input type="file" class="text-center center-block file-upload">
+      </div>
+  
+      </div> -->
+   
+  <div class="form-group">
+    <div class="col-xs-6">
+  <div>
+    <label>id</label>
+    <input [(ngModel)]="client.client_id" class="form-control" name="id" id="id">
+  </div>
+  </div>
+  </div>
+  
+  <br>
+  
+  <div class="form-group">
+    <div class="col-xs-6">
+        <div>
+            <label>Client Name</label>
+            <input [(ngModel)]="client.client_name"  class="form-control" name="client-name">
+          </div>
+          
+    </div>
+  </div>
+  
+  <br>
+  <div class="form-group">
+    <div class="col-xs-6">
+      <div>
+      <label>Contact Number</label>
+      <input [(ngModel)]="client.client_contact"  class="form-control" name="phone">
+    </div>
+    </div>
+  </div>
+  
+  <br>
+  
+  <div class="form-group">
+  <div class="col-xs-6">
+  <div>
+        <label>Email</label>
+      <input [(ngModel)]="client.client_email"   class="form-control" name="email" id="email">
+    </div>
+    </div>
+    </div>
+  
+    <div style="text-align:left">
+  
+    <button  class="btn-btn-lg btn-primary" name="Edit" type="submit" name="html">Edit</button>
+  </div>
+  
+  </div>
+  
+  
+  
+  
+  
+  
+  
